@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Typing Game computer science for Mr.Chan
+ * Typing Game computer science
  * 
  * @author Charles and Victor
  * @version (a version number or a date)
