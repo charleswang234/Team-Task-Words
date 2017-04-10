@@ -8,14 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mario extends Actor
 {
+    private int direction = 1; // 1 = right and -1 = left
     /**
      * Act - do whatever the Mario wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        
+        checkKey();
     }    
     
+     public void checkKey(){
+        if (Greenfoot.isKeyDown("right")){
+            direction = 2;
+            moveRight();
+        }
+        if (Greenfoot.isKeyDown("left")){
+            direction = -2;
+            moveLeft();
+        }
+    }
+
+    public void moveRight(){
+        setLocation(getX() + direction, getY());
+
+    }
+    
+    public void moveLeft(){
+        setLocation(getX() + direction, getY());
+    }
     
 }

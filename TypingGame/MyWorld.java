@@ -15,6 +15,18 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        super(800, 600, 1);  //creates world 800 x 600 by 1 pixels
+        super(1000, 700, 1);  //creates world 800 x 600 by 1 pixels
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Mario mario = new Mario();
+        addObject(mario,400,300);
+        mario.setLocation(475,638);
     }
 }
