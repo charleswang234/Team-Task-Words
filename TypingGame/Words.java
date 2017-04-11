@@ -18,6 +18,7 @@ public class Words extends Actor
     public Words(){
         Reader read = new Reader();
         Scanner r = read.getScanner("nouns.txt");
+        System.out.println(r);
         String str = "";
         while (r.hasNext()){    //puts all nouns into hashMap
             str = r.nextLine();
