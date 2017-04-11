@@ -16,6 +16,7 @@ public class Mario extends Actor
     public void act() 
     {
         checkKey();
+        remove();
     }    
     
      public void checkKey(){
@@ -38,4 +39,13 @@ public class Mario extends Actor
         setLocation(getX() + direction, getY());
     }
     
+    public void remove(){
+        Actor enemy;
+        enemy = getOneObjectAtOffset(10, 10, enemy.class);
+        if (enemy != null){
+            World world;
+            world = getWorld();
+            world.removeObject(enemy);
+        }
+    }
 }
