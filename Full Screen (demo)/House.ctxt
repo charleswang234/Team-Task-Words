@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=House
+comment0.text=\r\n\ A\ simple\ actor\ to\ show\ the\ funktion\ of\ the\ full\ screen\ mode.\r\n\ This\ actor\ will\ reakt\ on\ mousePressed\ and\ mouseClicked\ events.\r\n\ \r\n\ @author\ Gevater_Tod4711\r\n\ @version\ 1.1\r\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2
