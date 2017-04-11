@@ -1,6 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.HashMap;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.awt.Color;
+import java.util.Random;
 
 /**
  * Words for Word Game
@@ -10,7 +12,8 @@ import java.util.Scanner;
  */
 public class Words extends Actor
 {
-    private HashMap<String, Integer> nounsAdjVerbs = new HashMap<String, Integer>();    //hashmap for holding all words
+      
+    private ArrayList<String> nounsAdjVerbs = new ArrayList<String>();//Arraylist for holding all words
     private final int scoreWord = 2;    //score of word, depends on length of string times 2 
     /**
      * Constructor class of Words
@@ -18,23 +21,22 @@ public class Words extends Actor
     public Words(){
         Reader read = new Reader();
         Scanner r = read.getScanner("nouns.txt");
-        System.out.println(r);
         String str = "";
         while (r.hasNext()){    //puts all nouns into hashMap
             str = r.nextLine();
-            nounsAdjVerbs.put(str, str.length()*scoreWord);
+            nounsAdjVerbs.add(str);
         }       
         
         r = read.getScanner("adjectives.txt");
          while (r.hasNext()){   //puts all adjectives into hashMap
             str = r.nextLine();
-            nounsAdjVerbs.put(str, str.length()*scoreWord);
+            nounsAdjVerbs.add(str);
         }   
         
         r = read.getScanner("verbs.txt");   
          while (r.hasNextLine()){   //puts all verbs into hashMap
             str = r.nextLine();
-            nounsAdjVerbs.put(str, str.length()*scoreWord);
+            nounsAdjVerbs.add(str);
         }   
     }
     
@@ -44,7 +46,27 @@ public class Words extends Actor
      */
     public void act() 
     {
-    }    
+    }
+    
+    public String randomWords(){
+        Random r = new Random();
+        
+        System.out.println(nounsAdjVerbs.get(r.nextInt(nounsAdjVerbs.size())));
+        return nounsAdjVerbs.get(r.nextInt(nounsAdjVerbs.size()));
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

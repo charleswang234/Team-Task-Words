@@ -26,7 +26,10 @@ public class MyWorld extends World
     private void prepare()
     {
         Mario mario = new Mario();
-        addObject(mario,400,300);
-        mario.setLocation(475,638);
+        addObject(mario,475,638);
+        
+        Words words = new Words();
+        addObject(mario,0,0);
+        
     }
 }
