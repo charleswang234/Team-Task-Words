@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class menu here.
+ * Write a description of class EndScreen here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class menu extends World
+public class EndScreen extends World
 {
 
     /**
-     * Constructor for objects of class menu.
+     * Constructor for objects of class EndScreen.
      * 
      */
-    public menu()
+    public EndScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
@@ -26,8 +26,13 @@ public class menu extends World
      */
     private void prepare()
     {
-        start start = new start();
-        addObject(start,500, 350);
-        
+        End end = new End();
+        addObject(end,504,317);
+    }
+    
+    public void act(){
+        if(Greenfoot.isKeyDown("enter")){
+            Greenfoot.setWorld(new MyWorld());
+        }
     }
 }

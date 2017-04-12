@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    final int randomSpawn = 400; //spawn rate of goombas
     
     /**
      * Constructor for objects of class MyWorld.
@@ -34,4 +35,8 @@ public class MyWorld extends World
         enemy enemy = new enemy();
         addObject(enemy,600,652);
     }
+    
+     public void act(){
+    }
+    
 }
