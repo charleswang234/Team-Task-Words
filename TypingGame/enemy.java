@@ -10,6 +10,7 @@ public class enemy extends Actor
 {
     private int counter = 0; 
     private int speed = -1; 
+    private int what = 0;
     /**
      * Act - do whatever the enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,10 +19,11 @@ public class enemy extends Actor
     {
         move();
         mirror();
+
     }    
 
     public void move(){
-        if (counter < 10){
+        if (counter < 3){
             counter ++;
         }else{
             move(speed);
@@ -30,8 +32,9 @@ public class enemy extends Actor
     }
     
     private void mirror(){ 
-        if (speed != 1){
+        if (speed < 0 && what == 0){
             getImage().mirrorHorizontally();
+            what ++;
         }
     }
 
