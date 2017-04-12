@@ -32,8 +32,8 @@ public class MyWorld extends World
         Words words = new Words();
         addObject(words,0,0);
 
-        enemy enemy = new enemy();
-        addObject(enemy,600,652);
+        enemy enemy = new enemy(0);
+        addObject(enemy,2,652);
     }
     
      public void act(){
