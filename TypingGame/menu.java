@@ -30,4 +30,5 @@ public class menu extends World
         addObject(start,400, 300);
         
     }
+    
 }
