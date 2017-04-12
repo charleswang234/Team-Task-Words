@@ -91,7 +91,9 @@ public class Label extends Actor
         updateImage();
     }
     
-
+    public String getLabel(){
+        return this.value;
+    }
     /**
      * Update the image on screen to show the current value.
      */

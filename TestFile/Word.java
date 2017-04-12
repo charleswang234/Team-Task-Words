@@ -14,6 +14,19 @@ public class Word extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        String key = Greenfoot.getKey();
+        String word = ((MyWorld)getWorld()).label1.getLabel();
+        String word2 = ((MyWorld)getWorld()).label2.getLabel();
+        int count = ((MyWorld)getWorld()).count;
+        if(word2.equals(word)){
+            Greenfoot.stop();
+        }
+        if(key != null){
+            if (key.equals(word.substring(count,count+1))){
+                ((MyWorld)getWorld()).label2.setValue(((MyWorld)getWorld()).label2.getLabel() + key);
+                ((MyWorld)getWorld()).count++;
+                ((MyWorld)getWorld()).label3.setValue("Count: " + ((MyWorld)getWorld()).count);
+            }
+        }
     }    
 }

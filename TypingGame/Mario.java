@@ -16,26 +16,37 @@ public class Mario extends Actor
     public void act() 
     {
         checkKey();
+        remove();
     }    
     
-     public void checkKey(){
+     public void checkKey(){ //checking if key is down
         if (Greenfoot.isKeyDown("right")){
-            direction = 2;
+            direction = 3;
             moveRight();
         }
         if (Greenfoot.isKeyDown("left")){
-            direction = -2;
+            direction = -3;
             moveLeft();
         }
     }
 
-    public void moveRight(){
+    public void moveRight(){ //moving right
         setLocation(getX() + direction, getY());
 
     }
     
-    public void moveLeft(){
+    public void moveLeft(){ // moving left
         setLocation(getX() + direction, getY());
     }
     
+    public void remove(){ //if enemy touches mario, game ends, displays end screen
+        Actor enemy;
+        enemy = getOneObjectAtOffset(10, 10, enemy.class);
+        if (enemy != null){
+            World world;
+            world = getWorld();
+            world.removeObject(enemy);
+            Greenfoot.setWorld(new EndScreen());
+        }
+    }
 }

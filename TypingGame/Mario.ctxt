@@ -10,4 +10,6 @@ comment3.params=
 comment3.target=void\ moveRight()
 comment4.params=
 comment4.target=void\ moveLeft()
-numComments=5
+comment5.params=
+comment5.target=void\ remove()
+numComments=6
