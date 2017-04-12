@@ -11,11 +11,11 @@ public class MyWorld extends World
     final int randomSpawn = 400; //spawn rate of goombas
     Random r = new Random();
     int spawnLeftRight = 0;  //find what side enemy will spawn
-    int numberOfEnemies = 0; //counts the number of enemies
-    String enemyName = ""; 
+    Words words = new Words();
+    Scoreboard score = new Scoreboard();
+    Mario mario = new Mario();
 
     int count = 0; //Number of letter typed so far
-    Scoreboard score = new Scoreboard();
     Label label1 = new Label("",50); //Word to be typed
     Label label2 = new Label("",50); //Displays what you are typing
     Label label3 = new Label("Score: ",50);
@@ -38,19 +38,18 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        Mario mario = new Mario();
         addObject(mario,400,545);
 
-        Words words = new Words();
         addObject(words,0,0);
 
         addObject(label1,500,50);
         addObject(label2,500,350);
         addObject(label3,100,450);
-        
+
         score.score = 0; //Resets the current score;
         words.randomWords();
         label1.setValue(words.wordQueue.dequeue());
+        label3.setValue(("Score: " + score.score));
         label3.setValue("Score: " + score.score); //Sets score to 0
     }
 
@@ -59,16 +58,16 @@ public class MyWorld extends World
         word1 = label1.getLabel();
         word2 = label2.getLabel();
         if(word2.equals(word1)){
-            label2.setValue("");
-            label1.setValue("");
-            score.score += 10;
-            label3.setValue(("Score: " + score.score));
-            count = 0;
+            correct();
         }
         if(key != null){
             if (key.equals(word1.substring(count,count+1))){
                 label2.setValue(label2.getLabel() + key);
                 count++;
+            }
+            else{
+                score.score -= 1;
+                label3.setValue(("Score: " + score.score));
             }
         }
         spawnGoombas();
@@ -77,9 +76,7 @@ public class MyWorld extends World
     public void spawnGoombas(){
         int i = r.nextInt(randomSpawn);
         if (i == 1){
-            numberOfEnemies++;
             spawnLeftRight = r.nextInt(2);
-            enemyName = "goomba" + Integer.toString(numberOfEnemies);
 
             if (spawnLeftRight == 0){
                 enemy enemyName = new enemy(0);
@@ -89,5 +86,18 @@ public class MyWorld extends World
                 addObject(enemyName,820,557);
             }
         }
+    }
+
+    public void correct(){
+        String oldWord = label1.getLabel();
+        if(mario.getNearestActor() != null){
+            removeObject(mario.getNearestActor());
+        }
+        score.score += score.worth(oldWord.length());
+        label2.setValue("");
+        label1.setValue(words.wordQueue.dequeue());
+        words.wordQueue.enqueue(oldWord);
+        label3.setValue(("Score: " + score.score));
+        count = 0;
     }
 }
