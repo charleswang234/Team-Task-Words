@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.Random;
 /**
  * Typing Game computer science
  * 
@@ -9,7 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     final int randomSpawn = 400; //spawn rate of goombas
-    
+    Random r = new Random();
+    int spawnLeftRight = 0;  //find what side enemy will spawn
+    int numberOfEnemies = 0; //counts the number of enemies
+    String enemyName = ""; 
+
     int count = 0; //Number of letter typed so far
     Label label1 = new Label("Hello",50); //Word to be typed
     Label label2 = new Label("",50); //Displays what you are typing
@@ -22,7 +26,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        super(1000, 700, 1);  //creates world 800 x 600 by 1 pixels
+        super(800, 600, 1, false);  //creates world 800 x 600 by 1 pixels
         prepare();
     }
 
@@ -33,19 +37,16 @@ public class MyWorld extends World
     private void prepare()
     {
         Mario mario = new Mario();
-        addObject(mario,475,638);
+        addObject(mario,400,545);
 
         Words words = new Words();
         addObject(words,0,0);
 
-        enemy enemy = new enemy(0);
-        addObject(enemy,2,652);
-        
         addObject(label1,500,50);
         addObject(label2,500,350);
     }
-    
-     public void act(){
+
+    public void act(){
         key = Greenfoot.getKey();
         word1 = label1.getLabel();
         word2 = label2.getLabel();
@@ -59,6 +60,26 @@ public class MyWorld extends World
                 count++;
             }
         }
+        spawnGoombas();
     }
-    
+
+    public void spawnGoombas(){
+        int i = r.nextInt(randomSpawn);
+        if (i == 1){
+            numberOfEnemies++;
+            spawnLeftRight = r.nextInt(2);
+            enemyName = "goomba" + Integer.toString(numberOfEnemies);
+
+            if (spawnLeftRight == 0){
+                enemy enemyName = new enemy(0);
+                addObject(enemyName,-20,557);
+            }else if (spawnLeftRight == 1){
+                enemy enemyName = new enemy(800);
+                addObject(enemyName,820,557);
+            }
+        }
+    }
 }
+
+    
+    

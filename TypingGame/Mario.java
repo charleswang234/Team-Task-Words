@@ -41,7 +41,7 @@ public class Mario extends Actor
     
     public void remove(){ //if enemy touches mario, game ends, displays end screen
         Actor enemy;
-        enemy = getOneObjectAtOffset(10, 10, enemy.class);
+        enemy = getOneObjectAtOffset(0,0, enemy.class);
         if (enemy != null){
             World world;
             world = getWorld();

@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed Apr 12 16:28:38 GMT-05:00 2017
+#Wed Apr 12 16:49:02 GMT-05:00 2017
 target2.width=80
 target8.name=weirdWords
 target11.y=10
@@ -11,7 +11,7 @@ dependency12.type=UsesDependency
 class.menu.superclass=greenfoot.World
 target1.type=ClassTarget
 target7.showInterface=false
-mainWindow.height=744
+mainWindow.height=1060
 target6.typeParameters=
 dependency9.to=End
 target1.height=50
@@ -47,8 +47,8 @@ dependency8.from=Mario
 class.EndScreen.image=bluerock.jpg
 target4.typeParameters=
 target5.name=enemy
-world.lastInstantiated=menu
-mainWindow.width=1382
+world.lastInstantiated=EndScreen
+mainWindow.width=1938
 readme.width=47
 target9.name=menu
 target5.height=50
@@ -71,8 +71,8 @@ version=2.8.0
 dependency6.to=enemy
 target2.showInterface=false
 dependency1.from=MyWorld
-mainWindow.y=-8
-mainWindow.x=-8
+mainWindow.y=-9
+mainWindow.x=-9
 target5.showInterface=false
 target8.showInterface=false
 dependency5.from=MyWorld
