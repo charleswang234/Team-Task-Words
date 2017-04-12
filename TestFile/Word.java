@@ -11,7 +11,6 @@ public class Word extends Actor
     /**
      * Act - do whatever the Word wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         String key = Greenfoot.getKey();
@@ -28,5 +27,6 @@ public class Word extends Actor
                 ((MyWorld)getWorld()).label3.setValue("Count: " + ((MyWorld)getWorld()).count);
             }
         }
-    }    
+    }
+    */
 }
