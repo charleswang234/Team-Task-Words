@@ -15,7 +15,6 @@ public class MyWorld extends World
     String key;
     String word1;
     String word2;
-    
     /**
      * Constructor for objects of class MyWorld.
      * 
