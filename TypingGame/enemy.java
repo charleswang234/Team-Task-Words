@@ -9,8 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class enemy extends Actor
 {
     private int counter = 0; 
-    private int speed = -1; 
-    private int what = 0;
+    private int speed = 0; 
+    public int xValue;
+    
+    public enemy(int x){
+        xValue = x; 
+        if (xValue > 350){
+         speed = - 1;
+         getImage().mirrorHorizontally();
+        }else{
+            speed = 1;
+        }
+    }
+    
     /**
      * Act - do whatever the enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,8 +29,6 @@ public class enemy extends Actor
     public void act() 
     {
         move();
-        mirror();
-
     }    
 
     public void move(){
@@ -29,13 +38,6 @@ public class enemy extends Actor
             move(speed);
             counter = 0;
         }
-    }
-    
-    private void mirror(){ 
-        if (speed < 0 && what == 0){
-            getImage().mirrorHorizontally();
-            what ++;
-        }
-    }
+   }
 
 }
