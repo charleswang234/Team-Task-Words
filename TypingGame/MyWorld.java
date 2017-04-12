@@ -15,8 +15,10 @@ public class MyWorld extends World
     String enemyName = ""; 
 
     int count = 0; //Number of letter typed so far
-    Label label1 = new Label("Hello",50); //Word to be typed
+    Scoreboard score = new Scoreboard();
+    Label label1 = new Label("",50); //Word to be typed
     Label label2 = new Label("",50); //Displays what you are typing
+    Label label3 = new Label("Score: ",50);
     String key; //Tracks last key pressed
     String word1; //Tracks value of label1
     String word2; //Tracks value of label2
@@ -44,6 +46,12 @@ public class MyWorld extends World
 
         addObject(label1,500,50);
         addObject(label2,500,350);
+        addObject(label3,100,450);
+        
+        score.score = 0; //Resets the current score;
+        words.randomWords();
+        label1.setValue(words.wordQueue.dequeue());
+        label3.setValue("Score: " + score.score); //Sets score to 0
     }
 
     public void act(){
@@ -52,6 +60,9 @@ public class MyWorld extends World
         word2 = label2.getLabel();
         if(word2.equals(word1)){
             label2.setValue("");
+            label1.setValue("");
+            score.score += 10;
+            label3.setValue(("Score: " + score.score));
             count = 0;
         }
         if(key != null){
@@ -80,6 +91,3 @@ public class MyWorld extends World
         }
     }
 }
-
-    
-    

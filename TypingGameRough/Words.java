@@ -37,7 +37,6 @@ public class Words extends Actor
             str = r.nextLine();
             nounsAdjVerbs.add(str);
         }
-        
     }
     
     /**
@@ -51,9 +50,6 @@ public class Words extends Actor
     public String randomWords(){
         Random r = new Random();
         int number = r.nextInt(nounsAdjVerbs.size());
-        System.out.println(number);
-        System.out.println(nounsAdjVerbs.get(number));
         return nounsAdjVerbs.get(number);    
     }
-    
 }
