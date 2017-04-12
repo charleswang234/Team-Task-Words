@@ -10,6 +10,12 @@ public class MyWorld extends World
 {
     final int randomSpawn = 400; //spawn rate of goombas
     
+    int count = 0; //Number of letter typed so far
+    Label label1 = new Label("Hello",50); //Word to be typed
+    Label label2 = new Label("",50); //Displays what you are typing
+    String key; //Tracks last key pressed
+    String word1; //Tracks value of label1
+    String word2; //Tracks value of label2
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -34,9 +40,25 @@ public class MyWorld extends World
 
         enemy enemy = new enemy(0);
         addObject(enemy,2,652);
+        
+        addObject(label1,500,50);
+        addObject(label2,500,350);
     }
     
      public void act(){
+        key = Greenfoot.getKey();
+        word1 = label1.getLabel();
+        word2 = label2.getLabel();
+        if(word2.equals(word1)){
+            label2.setValue("");
+            count = 0;
+        }
+        if(key != null){
+            if (key.equals(word1.substring(count,count+1))){
+                label2.setValue(label2.getLabel() + key);
+                count++;
+            }
+        }
     }
     
 }
