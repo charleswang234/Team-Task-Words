@@ -10,6 +10,7 @@ import java.util.List;
 public class Mario extends Actor
 {
     private int direction = 1; // 1 = right and -1 = left
+    private boolean flipHorizontally = false; //check whether flip image horizontally 
     /**
      * Act - do whatever the Mario wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,10 +25,18 @@ public class Mario extends Actor
         if (Greenfoot.isKeyDown("right")){
             direction = 3;
             moveRight();
+            if (flipHorizontally){
+                flipHorizontally = false;
+                getImage().mirrorHorizontally();
+            }
         }
         if (Greenfoot.isKeyDown("left")){
             direction = -3;
             moveLeft();
+            if (!flipHorizontally){
+                flipHorizontally = true;
+                getImage().mirrorHorizontally();
+            }
         }
     }
 
