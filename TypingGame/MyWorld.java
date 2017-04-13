@@ -64,6 +64,8 @@ public class MyWorld extends World
             if (key.equals(word1.substring(count,count+1))){
                 label2.setValue(label2.getLabel() + key);
                 count++;
+            }else if (key.equals("enter") || key.equals("left") || key.equals("right") 
+            || key.equals("up") || key.equals("down")){
             }
             else{
                 score.score -= 1;
