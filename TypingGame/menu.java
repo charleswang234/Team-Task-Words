@@ -1,17 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class menu here.
+ * The start screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version April 12, 2017
  */
 public class menu extends World
 {
-
     /**
      * Constructor for objects of class menu.
-     * 
      */
     public menu()
     {    
@@ -27,8 +25,6 @@ public class menu extends World
     private void prepare()
     {
         start start = new start();
-        addObject(start,400, 300);
-        
-    }
-    
+        addObject(start,400, 300);        
+    }    
 }
