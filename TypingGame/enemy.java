@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class enemy here.
+ * Goomba class that deals with the movements of the goomba.
  * 
  * @author Charles Wang and Victor Huang
  * @version April 12, 2017

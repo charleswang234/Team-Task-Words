@@ -9,6 +9,7 @@ import java.util.HashMap;
 public class Scoreboard extends Actor
 {
     public int score = 0; //Holds the score
+    public static int finalScore = 0; //Holds the final score when players lose the game
     //intializing Hashmap that holds <word length, word worth>
     private HashMap<Integer, Integer> wordScore = new HashMap<Integer, Integer>();
     

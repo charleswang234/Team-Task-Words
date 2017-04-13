@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Generic queue class.
+ * A Generic queue class with all the main methods.
  * 
  * @author Charles Wang and Victor Huang
  * @version April, 2017
