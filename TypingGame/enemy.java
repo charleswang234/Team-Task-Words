@@ -15,10 +15,10 @@ public class enemy extends Actor
     public enemy(int x){
         xValue = x; 
         if (xValue > 350){
-         speed = - 1;
+         speed = - 2;
          getImage().mirrorHorizontally();
         }else{
-            speed = 1;
+            speed = 2;
         }
     }
     
