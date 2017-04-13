@@ -19,13 +19,13 @@ public class MyWorld extends World
     Mario mario = new Mario();
 
     int count = 0; //Tracks the number of letters typed so far
-    Label label1 = new Label("",50); //The word to be typed
-    Label label2 = new Label("",50); //Displays what the player are typing
-    Label label3 = new Label("Score: ",50); //Displays the score
+    Label currentWord = new Label("",50); //The word to be typed
+    Label playerInput = new Label("",50); //Displays what the player are typing
+    Label currentScore = new Label("Score: ",50); //Displays the score
     String key; //Tracks last key pressed
-    String word1; //Tracks value of label1
-    String word2; //Tracks value of label2
-    
+    String word1; //Tracks value of currentWord
+    String word2; //Tracks value of playerInput
+
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -44,21 +44,21 @@ public class MyWorld extends World
         //Adding Mario, the words, and the scoreboard to the world
         addObject(mario,400,545);
         addObject(words,-20,-20);
-        addObject(label1,400,50);
-        addObject(label2,400,250);
-        addObject(label3,150,50);
+        addObject(currentWord,400,50);
+        addObject(playerInput,400,250);
+        addObject(currentScore,150,50);
 
         score.score = 0; //Resets the current score;
         words.randomWords(); //Queuing up all the words that the player will type
-        label1.setValue(words.wordQueue.dequeue()); //Taking the first word from the queue
-        label3.setValue("Score: " + score.score); //Sets score to 0
+        currentWord.setValue(words.wordQueue.dequeue()); //Taking the first word from the queue
+        currentScore.setValue("Score: " + score.score); //Sets score to 0
 
         //Changing the colour of the word the player has inputed
-        label2.setLineColor(Color.BLUE);
-        label2.setFillColor(Color.BLUE);
+        playerInput.setLineColor(Color.BLUE);
+        playerInput.setFillColor(Color.BLUE);
         //Changing the colour of the scoreboard
-        label3.setLineColor(Color.GREEN);
-        label3.setFillColor(Color.GREEN);
+        currentScore.setLineColor(Color.GREEN);
+        currentScore.setFillColor(Color.GREEN);
     }
 
     /**
@@ -69,8 +69,8 @@ public class MyWorld extends World
         key = Greenfoot.getKey();//Checks the last key pressed
 
         //Gets the word you need to type and the word you have currently typed
-        word1 = label1.getLabel();
-        word2 = label2.getLabel();
+        word1 = currentWord.getLabel();
+        word2 = playerInput.getLabel();
 
         //Runs the correct word method after typing in the full word
         if(word2.equals(word1)){
@@ -80,7 +80,7 @@ public class MyWorld extends World
         //Code to check if the letter you typed in is the correct letter
         if(key != null){
             if (key.equals(word1.substring(count,count+1))){
-                label2.setValue(label2.getLabel() + key); //Updates the word the player has typed
+                playerInput.setValue(playerInput.getLabel() + key); //Updates the word the player has typed
                 count++; //Updates the amount of letters typed so far
             }
             //Ensures that score is not deducted for moving Mario or when you restart the game
@@ -89,7 +89,7 @@ public class MyWorld extends World
             }
             else{
                 score.score -= 1; //Deducts score for typing in the wrong letter
-                label3.setValue("Score: " + score.score); //Updates score
+                currentScore.setValue("Score: " + score.score); //Updates score
             }
         }
         spawnGoombas();//Spawns Goombas
@@ -120,14 +120,14 @@ public class MyWorld extends World
         if(mario.getNearestActor() != null){
             removeObject(mario.getNearestActor());
         }
-        
+
         //Procedure to get a new word and updates score
-        String oldWord = label1.getLabel();
+        String oldWord = currentWord.getLabel();
         words.wordQueue.enqueue(oldWord); //Puts the word back into the queue
         score.score += score.worth(oldWord.length()); //Increasing the score
-        label1.setValue(words.wordQueue.dequeue()); //Gets a new word
-        label2.setValue(""); //Clears the user input
-        label3.setValue(("Score: " + score.score)); //Updates score;
+        currentWord.setValue(words.wordQueue.dequeue()); //Gets a new word
+        playerInput.setValue(""); //Clears the user input
+        currentScore.setValue(("Score: " + score.score)); //Updates score;
         count = 0;
     }
 }
