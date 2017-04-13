@@ -1,10 +1,10 @@
 #Greenfoot properties
-#Wed Apr 12 18:13:25 EDT 2017
+#Wed Apr 12 19:45:02 EDT 2017
 target2.width=80
 target8.name=weirdWords
 target11.y=10
 target11.x=160
-class.Queue.superclass=greenfoot.Actor
+class.Queue.superclass=
 target5.naviview.expanded=true
 class.start.image=start.png
 class.enemy.image=goomba.png
@@ -144,7 +144,7 @@ dependency1.type=UsesDependency
 target4.type=ClassTarget
 target8.width=90
 dependency8.to=menu
-simulation.speed=50
+simulation.speed=67
 target9.width=80
 target7.height=50
 dependency5.type=UsesDependency
