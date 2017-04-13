@@ -12,8 +12,7 @@ import java.util.Random;
  */
 public class Words extends Actor
 {
-      
-    private ArrayList<String> nounsAdjVerbs = new ArrayList<String>();//Arraylist for holding all words
+    private static ArrayList<String> nounsAdjVerbs = new ArrayList<String>();//Arraylist for holding all words
     private final int scoreWord = 2;    //score of word, depends on length of string times 2 
     /**
      * Constructor class of Words
@@ -37,7 +36,7 @@ public class Words extends Actor
          while (r.hasNextLine()){   //puts all verbs into hashMap
             str = r.nextLine();
             nounsAdjVerbs.add(str);
-        }   
+        }
     }
     
     /**
@@ -50,24 +49,7 @@ public class Words extends Actor
     
     public String randomWords(){
         Random r = new Random();
-        
-        System.out.println(nounsAdjVerbs.get(r.nextInt(nounsAdjVerbs.size())));
-        return nounsAdjVerbs.get(r.nextInt(nounsAdjVerbs.size()));
-        
+        int number = r.nextInt(nounsAdjVerbs.size());
+        return nounsAdjVerbs.get(number);    
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
