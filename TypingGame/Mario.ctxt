@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Mario
-comment0.text=\r\n\ Main\ character/protagonist\ of\ the\ game\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ April\ 2017\r\n
+comment0.text=\r\n\ Main\ character/protagonist\ of\ the\ game\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ April\ 12,\ 2017\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Mario\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

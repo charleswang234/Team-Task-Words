@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndScreen here.
+ * Endscreen world. Allows players to restart the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version April 12, 2017
  */
 public class EndScreen extends World
 {
     /**
      * Constructor for objects of class EndScreen.
-     * 
      */
     public EndScreen()
     {    
@@ -29,6 +28,9 @@ public class EndScreen extends World
         addObject(end,400,300);
     }
     
+    /**
+     * Restarts the game.
+     */
     public void act(){
         if(Greenfoot.isKeyDown("enter")){
             Greenfoot.setWorld(new MyWorld());

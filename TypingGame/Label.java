@@ -8,15 +8,14 @@ import java.awt.Graphics2D;
 import java.awt.FontMetrics;
 import java.awt.font.TextLayout;
 
-
 /**
  * A Label class that allows you to display a textual value on screen.
  * 
  * The Label is an actor, so you will need to create it, and then add it to the world
- * in Greenfoot.  If you keep a reference to the Label then you can change the text it
+ * in Greenfoot. If you keep a reference to the Label then you can change the text it
  * displays.  
  *
- * @author Amjad Altadmri 
+ * @author Amjad Altadmri
  * @version 1.1
  */
 public class Label extends Actor
@@ -24,11 +23,9 @@ public class Label extends Actor
     private String value;
     private int fontSize;
     private Color lineColor = Color.BLACK;
-    private Color fillColor = Color.BLACK;
-    
+    private Color fillColor = Color.BLACK;    
     private static final Color transparent = new Color(0,0,0,0);
 
-    
     /**
      * Create a new label, initialise it with the int value to be shown and the font size 
      */
@@ -91,14 +88,19 @@ public class Label extends Actor
         updateImage();
     }
     
-    public String getLabel(){
-        return this.value;
-    }
+    
     /**
      * Update the image on screen to show the current value.
      */
     private void updateImage()
     {
         setImage(new GreenfootImage(value, fontSize, fillColor, transparent, lineColor));
+    }
+    
+    /**
+     * Gets and returns the label in a string format.
+     */
+    public String getLabel(){
+        return this.value;
     }
 }

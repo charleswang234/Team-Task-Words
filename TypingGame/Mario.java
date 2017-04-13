@@ -5,7 +5,7 @@ import java.util.List;
  * Main character/protagonist of the game
  * 
  * @author Charles Wang and Victor Huang
- * @version April 2017
+ * @version April 12, 2017
  */
 public class Mario extends Actor
 {
@@ -54,8 +54,8 @@ public class Mario extends Actor
         return Math.hypot(actor.getX() - getX(), actor.getY() - getY());
     }
 
-    public Actor getNearestActor() {
-        List<enemy> nearestActors = getObjectsInRange(1000, enemy.class);//here you can use the radius you want and maybe another class;
+    public Actor getNearestActor(){
+        List<enemy> nearestActors = getObjectsInRange(1000, enemy.class); //here you can use the radius you want and maybe another class;
         if(!nearestActors.isEmpty()){
             enemy nearestActor = null;
             double nearestDistance = getDistance(nearestActors.get(0));

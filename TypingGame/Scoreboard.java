@@ -1,15 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.HashMap;
 /**
- * Write a description of class Scoreboard here.
+ * Scoreboard class keeps track of the player's score and how much each word is worth.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Charles Wang and Victor Huang
+ * @version April 12, 2017
  */
 public class Scoreboard extends Actor
 {
-    public int score = 0;
-    private HashMap<Integer, Integer> wordScore = new HashMap<Integer, Integer>(); 
+    public int score = 0; //Holds the score
+    //intializing Hashmap that holds <word length, word worth>
+    private HashMap<Integer, Integer> wordScore = new HashMap<Integer, Integer>();
+    
+    /**
+     * Gives worth to all words according to a specified length range when instantiating the scoreboard.
+     */
     public Scoreboard(){
         for (int i = 0; i < 20; i++){
             if (i < 7){
@@ -26,6 +31,10 @@ public class Scoreboard extends Actor
             }
         }
     }
+    
+    /**
+     * Checks the length of the correct word that was typed and gives the value associated with that length.
+     */
     public int worth(int length){
         return wordScore.get(length);
     }
