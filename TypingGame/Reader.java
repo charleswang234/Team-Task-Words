@@ -4,7 +4,7 @@ import java.io.InputStream;
 /**
  * A reader for files that you want to use with a Greenfoot project.
  * 
- * @author Charles Wang
+ * @author Charles Wang and Victor Huang
  * @version April 2017
  */
 
