@@ -1,5 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Scanner;
+import java.util.ArrayList;
 import java.awt.Color;
+import java.util.Random;
 
 /**
  * Words for Word Game
@@ -9,46 +12,49 @@ import java.awt.Color;
  */
 public class Words extends Actor
 {
-
-    public void addWord(){
-
-    }
-
-    private GreenfootImage me;
-    private int number;
-
+    private ArrayList<String> nounsAdjVerbs = new ArrayList<String>();//Arraylist for holding all words
+    private final int queueSize = 2000;
+    private int number = 0;
+    public Queue<String> wordQueue = new Queue<String>();
+    public String oldWord = "";
+    /**
+     * Constructor class of Words
+     */
     public Words(){
-        me = new GreenfootImage(50,50);    
-        drawBlankImage();
-        number=0;
+        Reader read = new Reader();
+        Scanner r = read.getScanner("nouns.txt");
+        String str = "";
+        while (r.hasNext()){    //puts all nouns into hashMap
+            str = r.nextLine();
+            nounsAdjVerbs.add(str);
+        }       
+
+        r = read.getScanner("adjectives.txt");
+        while (r.hasNext()){   //puts all adjectives into hashMap
+            str = r.nextLine();
+            nounsAdjVerbs.add(str);
+        }   
+
+        r = read.getScanner("verbs.txt");   
+        while (r.hasNextLine()){   //puts all verbs into hashMap
+            str = r.nextLine();
+            nounsAdjVerbs.add(str);
+        }   
     }
 
+    /**
+     * Act - do whatever the Mario wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act() 
     {
-        checkKey();
     }
 
-    private void checkKey(){
-        if (Greenfoot.isKeyDown("space")){
-            number=setRandom();
-            drawBlankImage();
-            drawRandomNumber();
+    public void randomWords(){
+        Random r = new Random();
+        for(int i = 0; i < queueSize; i++){
+            number = r.nextInt(nounsAdjVerbs.size()); 
+            wordQueue.enqueue(nounsAdjVerbs.get(number)); 
         }
-    }
-
-    private int setRandom(){
-        return Greenfoot.getRandomNumber(99)+1;
-    }
-
-    private void drawRandomNumber(){
-        me.setColor(Color.RED);
-        me.drawString(" "+number,10,10);
-        setImage(me);
-    }
-
-    private void drawBlankImage(){
-        me.setColor(Color.BLACK);
-        me.fill();
-        setImage(me);
     }
 }
