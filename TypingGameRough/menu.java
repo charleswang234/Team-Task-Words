@@ -16,7 +16,7 @@ public class menu extends World
     public menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 700, 1); 
+        super(800, 600, 1); 
         prepare();
     }
 
@@ -27,7 +27,7 @@ public class menu extends World
     private void prepare()
     {
         start start = new start();
-        addObject(start,500, 350);
+        addObject(start,400, 300);
         
     }
 }

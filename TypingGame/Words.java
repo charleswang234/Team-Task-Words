@@ -12,9 +12,11 @@ import java.util.Random;
  */
 public class Words extends Actor
 {
-      
     private ArrayList<String> nounsAdjVerbs = new ArrayList<String>();//Arraylist for holding all words
-    private final int scoreWord = 2;    //score of word, depends on length of string times 2 
+    private final int queueSize = 2000;
+    private int number = 0;
+    public Queue<String> wordQueue = new Queue<String>();
+    public String oldWord = "";
     /**
      * Constructor class of Words
      */
@@ -26,20 +28,20 @@ public class Words extends Actor
             str = r.nextLine();
             nounsAdjVerbs.add(str);
         }       
-        
+
         r = read.getScanner("adjectives.txt");
-         while (r.hasNext()){   //puts all adjectives into hashMap
+        while (r.hasNext()){   //puts all adjectives into hashMap
             str = r.nextLine();
             nounsAdjVerbs.add(str);
         }   
-        
+
         r = read.getScanner("verbs.txt");   
-         while (r.hasNextLine()){   //puts all verbs into hashMap
+        while (r.hasNextLine()){   //puts all verbs into hashMap
             str = r.nextLine();
             nounsAdjVerbs.add(str);
         }   
     }
-    
+
     /**
      * Act - do whatever the Mario wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -47,27 +49,12 @@ public class Words extends Actor
     public void act() 
     {
     }
-    
-    public String randomWords(){
+
+    public void randomWords(){
         Random r = new Random();
-        
-        System.out.println(nounsAdjVerbs.get(r.nextInt(nounsAdjVerbs.size())));
-        return nounsAdjVerbs.get(r.nextInt(nounsAdjVerbs.size()));
-        
+        for(int i = 0; i < queueSize; i++){
+            number = r.nextInt(nounsAdjVerbs.size()); 
+            wordQueue.enqueue(nounsAdjVerbs.get(number)); 
+        }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

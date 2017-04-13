@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Scoreboard extends Actor
 {
-    public static int score = 0;
-    public static int length = 0;
+    public int score = 0;
+    public int length = 0;
     /**
      * Act - do whatever the Scoreboard wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
