@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Scanner;
 import java.io.InputStream;
 /**
- * A reader for files that you want to use with a Greenfoot project.
+ * A reader to read through files.
  * 
- * @author Charles Wang
- * @version April 2017
+ * @author Charles Wang and Victor Huang
+ * @version April 12, 2017
  */
 
 public class Reader 

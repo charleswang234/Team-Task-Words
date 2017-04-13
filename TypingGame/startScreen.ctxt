@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=startScreen
+comment0.text=\r\n\ The\ Main\ Menu\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ April\ 12,\ 2017\r\n
+comment1.params=
+comment1.target=startScreen()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ startScreen.\r\n
+comment2.params=
+comment2.target=void\ act()
+numComments=3

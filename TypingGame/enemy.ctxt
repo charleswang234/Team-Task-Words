@@ -1,11 +1,9 @@
 #BlueJ class context
 comment0.target=enemy
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ enemy\ here.\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ April\ 12,\ 2017\r\n
+comment0.text=\r\n\ Goomba\ class\ that\ deals\ with\ the\ movements\ of\ the\ goomba.\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ April\ 12,\ 2017\r\n
 comment1.params=x
 comment1.target=enemy(int)
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ enemy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment3.params=
-comment3.target=void\ move()
-numComments=4
+numComments=3
