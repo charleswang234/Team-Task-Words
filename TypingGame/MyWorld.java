@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class MyWorld extends World
 {
-    final int randomSpawn = 400; //spawn rate of goombas
+    final int randomSpawn = 100; //spawn rate of goombas
     Random r = new Random();
     int spawnLeftRight = 0;  //find what side enemy will spawn
     Words words = new Words();
@@ -42,8 +42,8 @@ public class MyWorld extends World
 
         addObject(words,0,0);
 
-        addObject(label1,500,50);
-        addObject(label2,500,350);
+        addObject(label1,400,50);
+        addObject(label2,400,350);
         addObject(label3,100,450);
 
         score.score = 0; //Resets the current score;
