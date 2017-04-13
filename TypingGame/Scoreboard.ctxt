@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Scoreboard
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Scoreboard\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Scoreboard\ class\ keeps\ track\ of\ the\ player's\ score\ and\ how\ much\ each\ word\ is\ worth.\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ April\ 12,\ 2017\r\n
 comment1.params=
 comment1.target=Scoreboard()
+comment1.text=\r\n\ Gives\ worth\ to\ all\ words\ according\ to\ a\ specified\ length\ range\ when\ instantiating\ the\ scoreboard.\r\n
 comment2.params=length
 comment2.target=int\ worth(int)
+comment2.text=\r\n\ Checks\ the\ length\ of\ the\ correct\ word\ that\ was\ typed\ and\ gives\ the\ value\ associated\ with\ that\ length.\r\n
 numComments=3

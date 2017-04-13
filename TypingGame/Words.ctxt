@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=Words
-comment0.text=\r\n\ Words\ for\ Word\ Game\r\n\ \r\n\ @author\ Charles\ and\ Victor\r\n\ @version\ April\ 2017\r\n
+comment0.text=\r\n\ The\ words\ class\ is\ used\ to\ put\ words\ into\ a\ list\ and\ randomizes\ them.\r\n\ \r\n\ @author\ Charles\ Wang\ and\ Victor\ Huang\r\n\ @version\ April\ 12,\ 2017\r\n
 comment1.params=
 comment1.target=Words()
-comment1.text=\r\n\ Constructor\ class\ of\ Words\r\n
+comment1.text=\r\n\ Reads\ and\ puts\ all\ the\ words\ from\ the\ text\ files\ into\ an\ ArrayList\ when\ an\ instance\ of\ words\ is\ created.\r\n
 comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Mario\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment3.params=
-comment3.target=void\ randomWords()
-numComments=4
+comment2.target=void\ randomWords()
+comment2.text=\r\n\ Randomly\ selects\ words\ and\ puts\ them\ into\ a\ queue;\r\n
+numComments=3
