@@ -82,6 +82,9 @@ public class MyWorld extends World
             if (key.equals(word1.substring(count,count+1))){
                 playerInput.setValue(playerInput.getLabel() + key); //Updates the word the player has typed
                 count++; //Updates the amount of letters typed so far
+            }else if (Greenfoot.isKeyDown("space") && word1.substring(count,count+1).equals(" ")){
+                playerInput.setValue(playerInput.getLabel() + " "); //Updates the word the player has typed
+                count++; //Updates the amount of letters typed so far
             }
             //Ensures that score is not deducted for moving Mario or when you restart the game
             else if (key.equals("enter") || key.equals("left") || key.equals("right") 
