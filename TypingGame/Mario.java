@@ -44,11 +44,15 @@ public class Mario extends Actor
     }
 
     public void moveRight(){ //moving right
-        setLocation(getX() + direction, getY());
+        if (getX() < 800){ //doesn't go offscreen
+            setLocation(getX() + direction, getY());
+        }
     }
 
     public void moveLeft(){ // moving left
-        setLocation(getX() + direction, getY());
+        if (getX() > 0){ // doesn't go offscreen
+            setLocation(getX() + direction, getY());
+        }
     }
 
     /**
@@ -78,7 +82,7 @@ public class Mario extends Actor
      */
     public Actor getNearestActor(){
         List<enemy> nearestActors = getObjectsInRange(1000, enemy.class); //Puts all the goombas in a 1000pixel radius into a list.
-        
+
         //If the list is not empty, finds the nearest goomba.
         if(!nearestActors.isEmpty()){
             enemy nearestActor = null;
